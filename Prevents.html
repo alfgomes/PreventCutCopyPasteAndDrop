@@ -1,0 +1,41 @@
+<html>
+<head>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<style type="text/css">
+	span {
+		color: blue;
+	}
+</style>
+</head>
+<body>
+  <h1>jQuery copy, paste and cut example</h1>
+  <form action="#">
+  	<label>TextBox : </label>
+	<input id="textA" class="JustType" type="text" size="50" value="Copy, paste or cut message here" />
+  </form>
+  <span></span>
+  
+<script type="text/javascript">
+$(document).ready(function() {
+	$("input[class*=JustType]").bind({
+		copy : function() {
+            event.preventDefault();
+			$('span').text('copy behaviour detected!');
+		},
+		paste : function() {
+            event.preventDefault();
+			$('span').text('paste behaviour detected!');
+		},
+		cut : function() {
+            event.preventDefault();
+			$('span').text('cut behaviour detected!');
+		},
+		drop : function() {
+            event.preventDefault();
+			$('span').text('drop behaviour detected!');
+		}
+	});
+});
+</script>
+</body>
+</html>
